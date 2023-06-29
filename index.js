@@ -18,10 +18,7 @@ const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 
 const PORT =  process.env.PORT||5000;
 
-app.get('/', (req, res) => {
-    // console.log(process.env.PORT);
-    res.send('Welcome to Local host 5000')
-})
+
 app.get("/",(req,res)=>{
     res.status(200).json({
         uptime: process.uptime(),
