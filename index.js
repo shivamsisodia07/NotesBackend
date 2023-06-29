@@ -22,6 +22,13 @@ app.get('/', (req, res) => {
     // console.log(process.env.PORT);
     res.send('Welcome to Local host 5000')
 })
+app.get("/",(req,res)=>{
+    res.status(200).json({
+        uptime: process.uptime(),
+        message:"Welcome to NotesApp API",
+        timestamp: Date.now(),
+    });
+})
 
 // app.get('/api/notes', (req, res) => {
 //     res.json(notes);
