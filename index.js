@@ -1,6 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 var cors=require('cors');
+var favicon = require('serve-favicon')
+var path = require('path')
 const app = express();
 const connectDB = require("./config/db");
 dotenv.config();
@@ -39,6 +41,7 @@ app.get("/",(req,res)=>{
 
 app.use('/api/users', userRoutes);
 app.use("/api/notes", noteRoutes);
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(notFound);
 app.use(errorHandler);
 
