@@ -3,7 +3,8 @@ const User = require('../models/userModel');
 const generateToken = require('../utils/generateToken');
 
 const registerUser = asyncHandler(async (req, res) => {
-    const { name, email, pass, pic } = req.body;
+    const { name, email, pass} = req.body;
+    console.log(req.body)
     const userExist = await User.findOne({email});
     if (userExist) {
         res.status(400);

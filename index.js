@@ -13,9 +13,6 @@ app.use(express.json());
 const userRoutes = require("./routes/userRoutes");
 const noteRoutes = require("./routes/noteRoutes");
 
-
-
-
 // const notes = require('./data/notes');
 const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 
