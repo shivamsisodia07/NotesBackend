@@ -16,7 +16,6 @@ const createNote = asyncHandler(async (req, res) => {
       return;
     } else {
       const note = new Note({ title, category, content, user: req.user._id });
-
       const createdNote = await note.save();
 
       res.status(201).json(createdNote);
