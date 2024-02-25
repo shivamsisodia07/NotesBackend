@@ -28,6 +28,8 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const authUser = asyncHandler(async (req, res) => {
     const { email, pass } = req.body;
+
+    // FOR FETCHING USER FROM DATABASE
     const user = await User.findOne({ email });
     if (user && (await user.matchPassword(pass))) {
       res.json({
